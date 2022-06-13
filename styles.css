@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+:root {
+	--red: hsl(0, 78%, 62%);
+	--cyan: hsl(180, 62%, 55%);
+	--orange: hsl(34, 97%, 64%);
+	--blue: hsl(212, 86%, 64%);
+	--very-dark-blue: hsl(234, 12%, 34%);
+	--grayish-blue: hsl(229, 6%, 66%);
+	--very-light-gray: hsl(0, 0%, 98%);
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	/* -------------- */
+	font-size: 15px;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 400;
+	background-color: var(--very-light-gray);
+}
+
+.wrapper {
+	max-width: 1200px;
+	margin: 3rem;
+}
+
+/* INTRO */
+
+h1 {
+	font-size: 2.3rem;
+	font-weight: 200;
+	color: var(--very-dark-blue);
+}
+
+h2 {
+	font-size: 2.3rem;
+	font-weight: 600;
+	color: var(--very-dark-blue);
+}
+
+.intro-paragraph {
+	color: var(--grayish-blue);
+	line-height: 1.4rem;
+	margin: 1.5rem auto 4.5rem;
+}
+
+/* BOXES - LAYOUT */
+
+.container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(4, 1fr);
+	gap: 2rem;
+}
+
+.box {
+	padding: 2rem;
+	border-radius: 0.5rem;
+	box-shadow: 0 1rem 2rem -1rem hsl(234, 12%, 34%, 0.3);
+	text-align: left;
+	background-color: #fff;
+}
+
+.box-supervisor {
+	grid-area: 2 / 1 / 4 / 2;
+	border-top: 0.25rem solid var(--cyan);
+}
+
+.box-team-builder {
+	grid-area: 1 / 2 / 3 / 3;
+	border-top: 0.25rem solid var(--red);
+}
+
+.box-karma {
+	grid-area: 3 / 2 / 5 / 3;
+	border-top: 0.25rem solid var(--orange);
+}
+
+.box-calculator {
+	grid-area: 2 / 3 / 4 / 4;
+	border-top: 0.25rem solid var(--blue);
+}
+
+/* BOXES - CONTENT */
+
+.box-title {
+	color: var(--very-dark-blue);
+	font-size: 1.3rem;
+	font-weight: 600;
+}
+
+.box-paragraph {
+	color: var(--grayish-blue);
+	font-size: 0.8rem;
+	margin-top: 0.6rem;
+	line-height: 1.4rem;
+}
+
+.box-icon {
+	display: block;
+	float: right;
+	margin-top: 2rem;
+}
+
+/* FOOTER */
+
+footer {
+	position: absolute;
+	bottom: 0;
+}
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
+
+/* MEDIA QUERIES */
+
+@media (max-height: 900px) {
+	footer {
+		position: unset;
+	}
+}
+
+@media (max-width: 900px) {
+	.wrapper {
+		max-width: 500px;
+	}
+
+	.container {
+		display: unset;
+	}
+
+	.box {
+		overflow: auto;
+		margin-top: 2rem;
+	}
+}
+
+@media (max-width: 550px) {
+	.wrapper {
+		margin: 3rem 2rem;
+	}
+
+	h1,
+	h2 {
+		font-size: 1.5rem;
+	}
+}
